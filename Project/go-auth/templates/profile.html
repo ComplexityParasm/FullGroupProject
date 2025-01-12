@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль пользователя</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #555;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .roles {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Расстояние между кнопками */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .button:hover {
+            background: linear-gradient(90deg, #0056b3, #003a70);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Добро пожаловать, {{.email}}!</h1>
+        <p>Вы: <span class="roles">{{.roles}}</span></p>
+
+        <div class="button-container">
+            <a href="/tests" class="button">Посмотреть тесты</a>
+            <a href="/create_test" class="button">Создать новый тест</a>
+            <a href="https://t.me/LogicLegionBot" class="button" target="_blank">Telegram-бот</a>
+            <a href="/logout" class="button" style="background: #dc3545;">Выйти</a>
+        </div>
+        
+    </div>
+</body>
+</html>
